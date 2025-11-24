@@ -1,0 +1,49 @@
+{
+  "name": "shortcuts-helper",
+  "displayName": "Shortcuts Helper",
+  "description": "Tracks user interactions and suggests efficiency improvements.",
+  "version": "0.0.1",
+  "publisher": "antigravity-user",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antigravity-user/shortcuts-helper"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "shortcuts-helper.helloWorld",
+        "title": "Hello World"
+      }
+    ],
+    "configuration": {
+      "title": "Shortcuts Helper",
+      "properties": {
+        "shortcutsHelper.cooldownInterval": {
+          "type": "number",
+          "default": 5000,
+          "description": "Cooldown interval in milliseconds between recommendations."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "18.x",
+    "typescript": "~4.9.5"
+  }
+}
