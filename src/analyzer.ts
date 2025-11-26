@@ -252,9 +252,9 @@ export class Analyzer {
     private selectBestShortcut(shortcuts: Shortcut[], event: InteractionEvent): Shortcut {
         // For activeEditorChange, use weighted selection
         if (event.type === 'activeEditorChange' && shortcuts.length > 0) {
-            // 75% chance to show the first shortcut, 25% chance to randomly select from all
+            // 65% chance to show the first shortcut, 35% chance to randomly select from all
             const random = Math.random();
-            if (random < 0.75) {
+            if (random < 0.65) {
                 return shortcuts[0]; // First unlearned shortcut
             } else {
                 // Randomly select from all shortcuts
@@ -274,6 +274,21 @@ export class Analyzer {
             const ctrlBacktick = shortcuts.find(s => s.shortcut === 'Ctrl+`');
             if (ctrlBacktick) {
                 return ctrlBacktick;
+            }
+            const ctrlUpDown = shortcuts.find(s => s.shortcut === 'Ctrl+↑ / Ctrl+↓');
+            if (ctrlUpDown) {
+                return ctrlUpDown;
+            }
+        }
+
+        if (event.type === 'debugStart') {
+            // Prioritize debugging shortcuts in order: F5 -> Shift+F5 -> F9 -> F10
+            const priorityOrder = ['F5', 'Shift+F5', 'F9', 'F10'];
+            for (const shortcutKey of priorityOrder) {
+                const found = shortcuts.find(s => s.shortcut === shortcutKey);
+                if (found) {
+                    return found;
+                }
             }
         }
 

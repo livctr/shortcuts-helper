@@ -17,6 +17,15 @@ activeEditorChange,True,Ctrl+K V,open Markdown preview to the side
 activeEditorChange,True,Ctrl+Shift+V,open Markdown preview
 activeTerminalChange,True,Ctrl+Shift+`,create new terminal
 activeTerminalChange,True,Ctrl+`,make the terminal pop up!
+activeTerminalChange,True,Ctrl+↑ / Ctrl+↓,scroll up/down in terminal
+debugStart,True,F5,start / continue debugging
+debugStart,True,Shift+F5,stop debugging
+debugStart,True,F9,toggle breakpoint
+debugStart,True,F10,step over (during debugging)
+windowStateChange,True,Alt+Tab,switch windows (OS-level shortcut)
+windowStateChange,True,Ctrl+Shift+N,open a new window/instance
+windowStateChange,True,Ctrl+Shift+W,close the current window/instance
+windowStateChange,True,F11,toggle full screen
 
 commandExecution,False,Ctrl+C,copy selection in terminal
 commandExecution,False,Ctrl+K F,close folder
@@ -26,17 +35,11 @@ commandExecution,False,Ctrl+K R,reveal active file in Explorer
 commandExecution,False,Ctrl+Shift+J,toggle Search details
 commandExecution,False,Ctrl+Shift+P,show the Command Palette
 commandExecution,False,Ctrl+V,paste into active terminal
-commandExecution,False,Ctrl+↑ / Ctrl+↓,scroll up/down in terminal
-commandExecution,False,F10,step over (during debugging)
-commandExecution,False,F9,toggle breakpoint
 commandExecution,False,Shift+PgUp / Shift+PgDn,scroll page up/down in terminal
 
-debugStart,True,F5,start / continue debugging
-debugStop,True,Shift+F5,stop debugging
 
 fileSave,False,Ctrl+K S,save All
 fileSave,False,Ctrl+S,save
-fileSave,False,Ctrl+Shift+S,save As...
 textChange,False,Ctrl+Shift+Space,trigger parameter hints
 textChange,False,Ctrl+Space / Ctrl+I,trigger suggestion (IntelliSense)
 
@@ -84,8 +87,3 @@ textChange,False,Ctrl+X,cut the entire line when no text is selected
 textChange,False,F2,rename Symbol
 textChange,False,Shift+Alt+F,format document
 textChange,False,Shift+Alt+↓ / Shift+Alt+↑,copy the current line or selected lines up/down
-
-windowStateChange,True,Alt+Tab,switch windows (OS-level shortcut)
-windowStateChange,True,Ctrl+Shift+N,open a new window/instance
-windowStateChange,True,Ctrl+Shift+W,close the current window/instance
-windowStateChange,True,F11,toggle full screen

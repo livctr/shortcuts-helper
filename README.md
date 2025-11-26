@@ -92,10 +92,6 @@ The extension uses `shortcuts.csv` with the following structure:
 - User feedback mechanism ("I got it!" button)
 
 ### 🔄 Not Yet Implemented
-- Command execution tracking (defined but not hooked up)
-- Panel visibility tracking (defined but not hooked up)
-- IntelliSense/Peek/QuickFix/References triggers (defined but not hooked up)
-- Zoom change tracking (defined but not hooked up)
 - Statistics/analytics on learning progress
 - Custom shortcut additions by users
 
