@@ -1,12 +1,16 @@
-# 🚀 Shortcuts Helper: Level Up Your Coding Speed!
+# 🚀 VSCode Shortcut Buddy: Level Up Your Coding Speed!
+
+<div align="center">
+  <img src="assets/image_128x128.png" alt="My Extension Logo" width="128"/>
+</div>
 
 ## 📚 About
 
-Have you ever watched someone try to code and they were SO SLOW? Then this extension is for them! Never click and drag windows again: use Alt+Tab! **Shortcuts Helper** is like training wheels for learning nifty VSCode shortcuts.
+Have you ever watched someone try to code and they were SO SLOW? Then this extension is for them! Never click and drag windows again: use Alt+Tab! **VSCode Shortcut Buddy** is like training wheels for learning nifty VSCode shortcuts.
 
 ## 🎮 How It Works
 
-Imagine having a friend who taps you on the shoulder and says, *"Psst! You can do that way faster!"* That's exactly what **Shortcuts Helper** does.
+Imagine having a friend who taps you on the shoulder and says, *"Psst! You can do that way faster!"* That's exactly what **VSCode Shortcut Buddy** does. Go to the VSCode Marketplace (`Ctrl+Shift+X`) and search for **VSCode Shortcut Buddy**. Install it to get started. Alternatively, it can be found on the [Open VSX Registry](https://open-vsx.org/) by searching `VSCode Shortcut Buddy`.
 
 1.  **Just Code**: Go about your normal coding.
 2.  **Get Tips**: If you do something "the slow way" (like using the mouse too much), a friendly popup will show you the shortcut.
@@ -35,4 +39,4 @@ Here are some of the awesome tricks you'll master:
 
 ---
 
-**Ready to speed run your coding? Install Shortcuts Helper and start leveling up today!** 🚀
+**Ready to speed run your coding? Install VSCode Shortcut Buddy and start leveling up today!** 🚀

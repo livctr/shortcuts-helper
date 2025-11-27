@@ -1,12 +1,13 @@
 {
-  "name": "shortcuts-helper",
+  "name": "vscode-shortcuts-buddy",
   "displayName": "VSCode Shortcut Buddy",
   "description": "Training wheels for VSCode shortcuts",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "icon": "assets/image_128x128.png",
   "publisher": "livctr",
   "repository": {
     "type": "git",
-    "url": "https://github.com/livctr/shortcuts-helper"
+    "url": "https://github.com/livctr/vscode-shortcuts-buddy"
   },
   "engines": {
     "vscode": "^1.80.0"
@@ -21,7 +22,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "shortcuts-helper.viewLearnedShortcuts",
+        "command": "vscode-shortcuts-buddy.viewLearnedShortcuts",
         "title": "Shortcuts Helper: View Learned Shortcuts"
       }
     ],
