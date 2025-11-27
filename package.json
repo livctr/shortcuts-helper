@@ -34,12 +34,12 @@
       "properties": {
         "shortcutsHelper.cooldownInterval": {
           "type": "number",
-          "default": 5000,
+          "default": 600000,
           "description": "Cooldown interval in milliseconds between recommendations."
         },
         "shortcutsHelper.sessionRecommendationLimit": {
           "type": "number",
-          "default": 100,
+          "default": 4,
           "description": "Maximum number of recommendations to show per session."
         },
         "shortcutsHelper.debounceInterval": {

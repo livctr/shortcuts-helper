@@ -1,0 +1,93 @@
+interactionType,implemented,shortcut,action
+activeEditorChange,False,Alt+1 / Alt+2 / ...,"go to the specific editor tab number (1st, 2nd, etc.)"
+activeEditorChange,False,Ctrl+1 / Ctrl+2 / Ctrl+3,"focus into 1st, 2nd, or 3rd editor group"
+activeEditorChange,False,Ctrl+K Ctrl+W,close All editors
+activeEditorChange,False,Ctrl+K Ctrl+← / Ctrl+K Ctrl+→,focus into previous / next editor group
+activeEditorChange,False,Ctrl+K Enter,keep preview mode editor open
+activeEditorChange,False,Ctrl+K F12,open Definition to the side
+activeEditorChange,False,Ctrl+K V,open Markdown preview to the side
+activeEditorChange,False,Ctrl+K ← / Ctrl+K →,move active editor group
+activeEditorChange,False,Ctrl+N,new File
+activeEditorChange,False,Ctrl+O,open File...
+activeEditorChange,False,Ctrl+P,quickly open a file by typing its name\n- Then type > to switch the search to the Command Palette (same as Ctrl+Shift+P)\n- Then type # to search for a symbol across the entire workspace\n- Then type @ to search for a symbol within the current file
+activeEditorChange,False,Ctrl+PageUp / Ctrl+PageDown,navigate to the previous / next tab in the editor group
+activeEditorChange,False,Ctrl+Shift+PgUp / Ctrl+Shift+PgDn,move active editor left / right
+activeEditorChange,False,Ctrl+Shift+T,reopen closed editor
+activeEditorChange,False,Ctrl+Shift+V,open Markdown preview
+activeEditorChange,False,Ctrl+Tab / Ctrl+Shift+Tab,open next / previous editor in history
+activeEditorChange,False,F12,go to Definition
+activeEditorChange,False,Shift+Alt+0,toggle editor layout (horizontal/vertical)
+activeTerminalChange,False,Ctrl+Shift+`,create new terminal
+activeTerminalChange,False,Ctrl+`,show integrated terminal
+activeTerminalChange,False,Ctrl+`,toggle the terminal
+commandExecution,False,Alt+C / Alt+R / Alt+W,toggle case-sensitive / regex / whole word search options
+commandExecution,False,Ctrl+C,copy selection in terminal
+commandExecution,False,Ctrl+K F,close folder
+commandExecution,False,Ctrl+K P,copy path of active file
+commandExecution,False,Ctrl+K R,reveal active file in Explorer
+commandExecution,False,Ctrl+Shift+J,toggle Search details
+commandExecution,False,Ctrl+Shift+P,show the Command Palette
+commandExecution,False,Ctrl+V,paste into active terminal
+commandExecution,False,Ctrl+↑ / Ctrl+↓,scroll up/down in terminal
+commandExecution,False,F10,step over (during debugging)
+commandExecution,False,F11 / Shift+F11,step into / step out (during debugging)
+commandExecution,False,F11 / Shift+F11,step into / step out (during debugging)
+debugStart,False,F5,start / continue debugging
+commandExecution,False,F9,toggle breakpoint
+debugStop,False,Shift+F5,stop debugging
+commandExecution,False,Shift+PgUp / Shift+PgDn,scroll page up/down in terminal
+documentClose,False,Ctrl+W / Ctrl+F4,close active editor tab
+fileSave,False,Ctrl+K S,save All
+fileSave,False,Ctrl+S,save
+fileSave,False,Ctrl+Shift+S,save As...
+textChange,False,Ctrl+Shift+Space,trigger parameter hints
+textChange,False,Ctrl+Space / Ctrl+I,trigger suggestion (IntelliSense)
+panelVisibilityChange,False,"Ctrl+,",open User Settings
+panelVisibilityChange,False,Ctrl+B,toggle Sidebar visibility
+panelVisibilityChange,False,Ctrl+K Ctrl+S,open the Keyboard Shortcuts editor
+panelVisibilityChange,False,Ctrl+Shift+D,show Debug panel
+panelVisibilityChange,False,Ctrl+Shift+E,show Explorer / toggle focus
+panelVisibilityChange,False,Ctrl+Shift+F,show Search panel
+panelVisibilityChange,False,Ctrl+Shift+G,show Source Control panel
+panelVisibilityChange,False,Ctrl+Shift+H,replace in files
+panelVisibilityChange,False,Ctrl+Shift+M,show Problems panel (Errors/Warnings)
+panelVisibilityChange,False,Ctrl+Shift+U,show Output panel
+panelVisibilityChange,False,Ctrl+Shift+X,show Extensions panel
+selectionChange,False,Alt+F12,peek Definition
+selectionChange,False,Ctrl+.," ""quick Fix"""
+selectionChange,False,Shift+F12,show References
+selectionChange,False,Alt+Click,insert cursor at the clicked position
+selectionChange,False,Alt+Enter,select all occurrences of the Find match
+selectionChange,False,Ctrl+Alt+↑ / Ctrl+Alt+↓,insert cursor above / below
+selectionChange,False,Ctrl+C,copy the entire line when no text is selected
+selectionChange,False,Ctrl+D,add selection to next Find match
+selectionChange,False,Ctrl+F,find in the current file
+selectionChange,False,Ctrl+F2,select all occurrences of current word
+selectionChange,False,Ctrl+K Ctrl+D,move last selection to next Find match
+selectionChange,False,Ctrl+L,select current line
+selectionChange,False,Ctrl+Shift+Alt+Arrow,column (box) selection with keyboard
+selectionChange,False,Ctrl+Shift+L,select all occurrences of current selection
+selectionChange,False,Ctrl+Shift+O,go to Symbol...
+selectionChange,False,Ctrl+U,undo last cursor operation
+selectionChange,False,F3 / Shift+F3,find next / previous match
+selectionChange,False,F8 / Shift+F8,go to next / previous error or warning
+selectionChange,False,Shift+Alt+I,insert cursor at end of each line selected
+selectionChange,False,Shift+Alt+Mouse Drag,column (box) selection with mouse
+selectionChange,False,Shift+Alt+→ / Shift+Alt+←,expand / shrink selection
+textChange,False,Alt+↑ / Alt+↓,move the current line or selected lines up/down
+textChange,False,Ctrl+Backspace,delete word left
+textChange,False,Ctrl+Enter,insert a new line below the current cursor position
+textChange,False,Ctrl+H,replace in the current file
+textChange,False,Ctrl+K Ctrl+F,format selection
+textChange,False,Ctrl+K Ctrl+X,trim trailing whitespace
+textChange,False,Ctrl+Shift+K,delete the current line
+textChange,False,Ctrl+X,cut the entire line when no text is selected
+textChange,False,F2,rename Symbol
+textChange,False,Shift+Alt+F,format document
+textChange,False,Shift+Alt+↓ / Shift+Alt+↑,copy the current line or selected lines up/down
+visibleEditorsChange,False,Ctrl+\,split editor
+windowStateChange,False,Alt+Tab,switch windows (OS-level shortcut)
+windowStateChange,False,Ctrl+Shift+N,open a new window/instance
+windowStateChange,False,Ctrl+Shift+W,close the current window/instance
+windowStateChange,False,F11,toggle full screen
+zoomChange,False,Ctrl+= / Ctrl+-,zoom editor in / out

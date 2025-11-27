@@ -10,7 +10,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Shortcuts Helper extension is now active!');
 
     // Initialize shortcuts loader
-    const csvPath = path.join(context.extensionPath, 'shortcuts.csv');
+    const csvPath = path.join(context.extensionPath, 'shortcuts/shortcuts_curated.csv');
     const shortcutsLoader = new ShortcutsLoader(csvPath);
     shortcutsLoader.load();
 

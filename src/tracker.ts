@@ -16,6 +16,7 @@ export type InteractionType =
     | 'quickFixTrigger'
     | 'referencesTrigger'
     | 'debugStart'
+    | 'scrollChange'
     | 'tipOfTheDay';
 
 export interface InteractionEvent {
@@ -26,6 +27,9 @@ export interface InteractionEvent {
 
 export class InteractionTracker extends EventEmitter {
     private disposables: vscode.Disposable[] = [];
+    private lastScrollEventTime: number = 0;
+    private recentScrolls: { time: number; amount: number }[] = [];
+    private previousTopLines = new WeakMap<vscode.TextEditor, number>();
     private previousState = {
         editor: undefined as vscode.TextEditor | undefined,
         tabGroupCount: 0,
@@ -121,6 +125,41 @@ export class InteractionTracker extends EventEmitter {
         this.disposables.push(
             vscode.window.onDidChangeTextEditorSelection((event) => {
                 this.emitEvent('selectionChange', { editor: event.textEditor, selections: event.selections });
+            })
+        );
+
+        // Scroll changes (throttled to once every 10 minutes, requires >50 lines in 2s)
+        this.disposables.push(
+            vscode.window.onDidChangeTextEditorVisibleRanges((event) => {
+                const now = Date.now();
+                const currentTop = event.visibleRanges[0].start.line;
+                const prevTop = this.previousTopLines.get(event.textEditor);
+
+                this.previousTopLines.set(event.textEditor, currentTop);
+
+                if (prevTop === undefined) {
+                    return;
+                }
+
+                const delta = Math.abs(currentTop - prevTop);
+                this.recentScrolls.push({ time: now, amount: delta });
+
+                // Clean up old events (keep last 2 seconds)
+                const twoSecondsAgo = now - 2000;
+                this.recentScrolls = this.recentScrolls.filter(s => s.time >= twoSecondsAgo);
+
+                // Calculate total lines scrolled in the last 2 seconds
+                const totalLines = this.recentScrolls.reduce((sum, s) => sum + s.amount, 0);
+
+                if (totalLines > 50) {
+                    const tenMinutesInMs = 10 * 60 * 1000; // 10 minutes
+                    // Only emit scroll event if 10 minutes have passed since the last one
+                    if (now - this.lastScrollEventTime >= tenMinutesInMs) {
+                        this.emitEvent('scrollChange', { editor: event.textEditor, visibleRanges: event.visibleRanges });
+                        this.lastScrollEventTime = now;
+                        this.recentScrolls = []; // Reset to prevent immediate re-triggering
+                    }
+                }
             })
         );
 

@@ -1,156 +1,56 @@
 # Shortcuts Helper
 
-A VS Code extension that intelligently tracks user interactions and suggests keyboard shortcuts to improve productivity.
+Shortcuts Helper is a VS Code extension designed to help you become a keyboard power user. It tracks your interactions with the editor and intelligently suggests keyboard shortcuts to improve your efficiency.
 
-## 🎯 Overview
+## Features
 
-Shortcuts Helper monitors your VS Code activity and provides contextual keyboard shortcut recommendations based on your actions. The extension learns which shortcuts you've already mastered and avoids repeating suggestions, creating a personalized learning experience.
+- **Intelligent Suggestions**: Detects inefficient actions (like using the mouse for tasks that have shortcuts) and suggests the corresponding keyboard shortcut.
+- **Context-Aware**: Suggestions are tailored to your current context (e.g., editing text, navigating files, debugging).
+- **Progressive Learning**: Tracks which shortcuts you've learned and stops suggesting them once you've mastered them.
+- **Tip of the Day**: Shows a helpful shortcut tip on startup to expand your knowledge.
+- **Learned Shortcuts View**: View a list of all the shortcuts you've learned and unlearn them if needed.
 
-## ✨ Current Features
+## Supported Detections
 
-### 1. **Intelligent Interaction Tracking**
-Monitors 15+ different types of user interactions:
-- Active editor changes
-- Text editing and changes
-- Selection changes
-- File save operations
-- Document close events
-- Terminal changes
-- Visible editors changes
-- Window state changes
-- Command execution
-- Panel visibility changes
-- IntelliSense triggers
-- Peek definition triggers
-- Quick fix triggers
-- References triggers
-- Zoom changes
+The extension currently detects and suggests shortcuts for:
 
-### 2. **Context-Aware Recommendations**
-- Analyzes user interactions in real-time
-- Filters shortcuts based on the current context
-- Only shows relevant shortcuts for the action you just performed
-- Randomly selects from applicable shortcuts to provide variety
+- **Text Editing**:
+    - Copy/Cut/Paste lines (`Ctrl+C`, `Ctrl+X`, `Ctrl+V`)
+    - Delete lines (`Ctrl+Shift+K`)
+    - Delete words (`Ctrl+Backspace`)
+    - Duplicate lines (`Shift+Alt+Down/Up`)
+    - Multi-cursor editing (`Ctrl+Alt+Down/Up`, `Alt+Click`)
+    - Commenting code (`Ctrl+/`)
+- **Navigation**:
+    - Go to line start/end (`Fn+Left/Right` or `Home/End`)
+    - Expand selection (`Shift+Alt+Right`)
+    - Switch tabs (`Ctrl+Tab`)
+    - Go to file (`Ctrl+P`)
+- **Debugging**:
+    - Start debugging (`F5`)
+    - Step over (`F10`)
+    - Toggle breakpoint (`F9`)
+- **General**:
+    - Open terminal (`Ctrl+Backtick`)
+    - Command palette (`Ctrl+Shift+P`)
+    - And many more!
 
-### 3. **Persistent Learning System**
-- Tracks which shortcuts you've marked as learned
-- Uses VS Code's `globalState` API for persistence across sessions
-- Never shows the same shortcut twice after you've learned it
-- Provides a "I got it! Don't show again" option in recommendations
+## Configuration
 
-### 4. **Configurable Behavior**
-Two customizable settings:
-- `shortcutsHelper.cooldownInterval` (default: 1000ms) - Minimum time between recommendations
-- `shortcutsHelper.debounceInterval` (default: 500ms) - Delay after typing/scrolling before analyzing
+You can customize the extension's behavior in VS Code settings:
 
-### 5. **Comprehensive Shortcuts Database**
-- 91 keyboard shortcuts loaded from `shortcuts.csv`
-- Organized by interaction type for efficient lookup
-- Includes shortcut key combinations and action descriptions
+- `shortcutsHelper.cooldownInterval`: Time in milliseconds between recommendations (default: 300000ms / 5 mins).
+- `shortcutsHelper.sessionRecommendationLimit`: Maximum number of recommendations to show per session (default: 3).
+- `shortcutsHelper.debounceInterval`: Delay in milliseconds after typing or scrolling before analyzing events (default: 500ms).
 
-## 🏗️ Architecture
+## Commands
 
-### Core Components
+- `Shortcuts Helper: View Learned Shortcuts`: Opens a webview displaying all the shortcuts you have marked as learned.
 
-```
-src/
-├── extension.ts                    # Main entry point, wires all components together
-├── tracker.ts                      # Monitors VS Code events and emits interaction events
-├── analyzer.ts                     # Analyzes interactions and decides when to show recommendations
-├── shortcuts-loader.ts             # Loads and manages shortcuts from CSV file
-└── learned-shortcuts-manager.ts    # Tracks learned shortcuts with persistent storage
-```
+## Release Notes
 
-### Data Flow
+### 0.0.1
 
-```
-User Action → Tracker → Analyzer → Shortcuts Loader + Learned Manager → Recommendation
-```
-
-1. **Tracker** listens to VS Code events and emits standardized interaction events
-2. **Analyzer** receives events and applies filtering logic (cooldown, context, learned status)
-3. **Shortcuts Loader** provides relevant shortcuts for the interaction type
-4. **Learned Shortcuts Manager** filters out already-learned shortcuts
-5. **Analyzer** displays recommendation with "I got it!" option
-
-## 📊 Shortcuts Data
-
-The extension uses `shortcuts.csv` with the following structure:
-- **interactionType**: Type of user action that triggers this shortcut
-- **implemented**: Whether the shortcut is currently tracked (boolean)
-- **shortcut**: The keyboard combination (e.g., "Ctrl+K Ctrl+W")
-- **action**: Description of what the shortcut does
-
-## 🚀 Development Status
-
-### ✅ Implemented
-- Full interaction tracking system
-- Context-aware recommendation engine
-- Persistent learned shortcuts storage
-- CSV-based shortcuts database
-- Configurable cooldown and debounce
-- User feedback mechanism ("I got it!" button)
-
-### 🔄 Not Yet Implemented
-- Statistics/analytics on learning progress
-- Custom shortcut additions by users
-
-## 🛠️ Building & Testing
-
-```bash
-# Install dependencies
-npm install
-
-# Compile TypeScript
-npm run compile
-
-# Watch mode for development
-npm run watch
-```
-
-## 📝 Configuration
-
-Add to your VS Code `settings.json`:
-
-```json
-{
-  "shortcutsHelper.cooldownInterval": 1000,
-  "shortcutsHelper.debounceInterval": 500
-}
-```
-
-## 🎓 How It Works
-
-1. Extension activates on VS Code startup
-2. Loads shortcuts database from `shortcuts.csv`
-3. Begins monitoring user interactions
-4. When a relevant action occurs:
-   - Checks if cooldown period has passed
-   - Finds shortcuts matching the interaction type
-   - Filters by context (e.g., only if editor is active)
-   - Removes already-learned shortcuts
-   - Randomly selects one shortcut to recommend
-   - Shows notification with "I got it!" option
-5. If user clicks "I got it!", shortcut is marked as learned permanently
-
-## 📂 Project Structure
-
-```
-shortcuts-helper/
-├── src/                           # TypeScript source files
-├── out/                           # Compiled JavaScript output
-├── shortcuts.csv                  # Main shortcuts database (sorted)
-├── older_shortcuts/               # Archive of previous shortcuts files
-├── package.json                   # Extension manifest
-└── tsconfig.json                  # TypeScript configuration
-```
-
-## 🔮 Future Enhancements
-
-Potential areas for expansion:
-- Visual dashboard showing learning progress
-- Customizable recommendation frequency per shortcut type
-- Import/export learned shortcuts
-- Shortcut practice mode
-- Team-wide shortcut recommendations
-- Platform-specific shortcuts (Windows/Mac/Linux)
+- Initial release with core tracking and recommendation engine.
+- Support for text editing, navigation, and debugging shortcuts.
+- "Tip of the Day" feature.

@@ -22,13 +22,33 @@ debugStart,True,F5,start / continue debugging
 debugStart,True,Shift+F5,stop debugging
 debugStart,True,F9,toggle breakpoint
 debugStart,True,F10,step over (during debugging)
+scrollChange,True,PgUp / PgDn,scroll up/down in the editor
+selectionChange,True,Fn+← / Fn+→,move your cursor to the beginning / end of the line
+selectionChange,True,Shift+Alt+→,expand the selection
+textChange,True,Alt+Click,insert cursor at the clicked position
+textChange,True,Ctrl+D,add selection to next Find match
+textChange,True,Ctrl+F2,select all occurrences of current word
+textChange,True,Shift+Alt+↓ / Shift+Alt+↑,copy the current line or selected lines up/down
+textChange,True,Ctrl+C then Ctrl+V,copy the line that you are on and then paste it below!
+textChange,True,Ctrl+X,cut the entire line when no text is selected
+textChange,True,Ctrl+Shift+K,delete the current line without copying it to clipboard
+textChange,True,Ctrl+Backspace,delete words or spaces at a time (Ctrl+Z to undo)
+textChange,True,Ctrl+/,toggle line comment
 tipOfTheDay,True,Ctrl+Z / Ctrl+Shift+Z,undo and redo your changes! You can go back and forth between them infinitely - it's like a time machine for your code!
+tipOfTheDay,True,Alt+↑ / Alt+↓,move the current line or selected lines up/down
+tipOfTheDay,True,Ctrl+Enter,insert a new line below the current cursor position
+tipOfTheDay,True,Ctrl+F,find in the current file
+tipOfTheDay,True,Ctrl+Alt+↑ / Ctrl+Alt+↓,insert cursor above / below
 tipOfTheDay,True,Ctrl+Shift+P,show the Command Palette and type 'auto save' to turn on automatic saving - never lose your work again!
 tipOfTheDay,True,Ctrl+Shift+P,show the Command Palette and type 'color theme' to change your editor's appearance
 tipOfTheDay,True,Ctrl+Shift+P,show the Command Palette and type 'format document' to clean up your code
 tipOfTheDay,True,Ctrl+Shift+P,show the Command Palette and type 'toggle terminal' to show/hide the terminal
 tipOfTheDay,True,Ctrl+Shift+P,show the Command Palette and type 'file icon theme' to change folder/file icons
 tipOfTheDay,True,Ctrl+Shift+P,show the Command Palette and type 'reload window' to restart VS Code quickly
+tipOfTheDay,True,Ctrl+F then type a repeated word in your file then F3 / Shift+F3,to find the next and previous match of your word
+tipOfTheDay,True,Shift+Alt+F,format document
+tipOfTheDay,True,Ctrl+Shift+Space,trigger parameter hints
+tipOfTheDay,True,Ctrl+Space / Ctrl+I,trigger suggestion (IntelliSense)
 tipOfTheDay,True,"Ctrl+,",open Settings to customize VS Code
 tipOfTheDay,True,Ctrl+B,show/hide the left sidebar (where you see your files)
 tipOfTheDay,True,Ctrl+K Ctrl+S,open Keyboard Shortcuts settings
@@ -40,47 +60,9 @@ tipOfTheDay,True,Ctrl+Shift+H,open Find and Replace across all files
 tipOfTheDay,True,Ctrl+Shift+M,open Problems view (to see errors and warnings in your code)
 tipOfTheDay,True,Ctrl+Shift+U,open Output view (to see logs and messages from extensions)
 tipOfTheDay,True,Ctrl+Shift+X,open Extensions view (to install and manage extensions)
+tipOfTheDay,True,Ctrl+K P, copy the absolute path of active file
+tipOfTheDay,True,Ctrl+K Ctrl+Shift+C,copy the relative path of active file
 windowStateChange,True,Alt+Tab,switch windows (OS-level shortcut)
 windowStateChange,True,Ctrl+Shift+N,open a new window/instance
 windowStateChange,True,Ctrl+Shift+W,close the current window/instance
 windowStateChange,True,F11,toggle full screen
-
-selectionChange,False,Alt+F12,peek Definition
-selectionChange,False,Ctrl+.," ""quick Fix"""
-selectionChange,False,Shift+F12,show References
-selectionChange,False,Alt+Click,insert cursor at the clicked position
-selectionChange,False,Alt+Enter,select all occurrences of the Find match
-selectionChange,False,Ctrl+Alt+↑ / Ctrl+Alt+↓,insert cursor above / below
-selectionChange,False,Ctrl+C,copy the entire line when no text is selected
-selectionChange,False,Ctrl+D,add selection to next Find match
-selectionChange,False,Ctrl+F,find in the current file
-selectionChange,False,Ctrl+F2,select all occurrences of current word
-selectionChange,False,Ctrl+K Ctrl+D,move last selection to next Find match
-selectionChange,False,Ctrl+L,select current line
-selectionChange,False,Ctrl+Shift+Alt+Arrow,column (box) selection with keyboard
-selectionChange,False,Ctrl+Shift+L,select all occurrences of current selection
-selectionChange,False,Ctrl+Shift+O,go to Symbol...
-selectionChange,False,Ctrl+U,undo last cursor operation
-selectionChange,False,F3 / Shift+F3,find next / previous match
-selectionChange,False,F8 / Shift+F8,go to next / previous error or warning
-selectionChange,False,Shift+Alt+I,insert cursor at end of each line selected
-selectionChange,False,Shift+Alt+Mouse Drag,column (box) selection with mouse
-selectionChange,False,Shift+Alt+→ / Shift+Alt+←,expand / shrink selection
-selectionChange,False,Ctrl+C,copy the selection
-selectionChange,False,Ctrl+V,paste the selection
-selectionChange,False,PgUp / PgDn,scroll up/down in the editor
-textChange,False,Ctrl+K P,copy the absolute path of active file
-textChange,False,Ctrl+K Ctrl+Shift+C,copy the relative path of active file
-textChange,False,Alt+↑ / Alt+↓,move the current line or selected lines up/down
-textChange,False,Ctrl+Backspace,delete word left
-textChange,False,Ctrl+Enter,insert a new line below the current cursor position
-textChange,False,Ctrl+H,replace in the current file
-textChange,False,Ctrl+K Ctrl+F,format selection
-textChange,False,Ctrl+K Ctrl+X,trim trailing whitespace
-textChange,False,Ctrl+Shift+K,delete the current line
-textChange,False,Ctrl+X,cut the entire line when no text is selected
-textChange,False,F2,rename Symbol
-textChange,False,Shift+Alt+F,format document
-textChange,False,Shift+Alt+↓ / Shift+Alt+↑,copy the current line or selected lines up/down
-textChange,False,Ctrl+Shift+Space,trigger parameter hints
-textChange,False,Ctrl+Space / Ctrl+I,trigger suggestion (IntelliSense)
